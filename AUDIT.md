@@ -35,8 +35,6 @@ Contrast pairs checked:
 
 | # | What I saw (evidence) | Tool or test that showed it | POUR principle | WCAG idea | Severity | Planned fix |
 |---|---|---|---|---|---|---|
-
-
 | 1 | Pale text fails contrast across the page. I measured the header links (`#8ab4ff` on white) at 2.08:1, the white label on the orange "Request a Stay" button at 2.05:1, and the gray footer text (`#aaaaaa` on `#f4f4f4`) at 2.11:1. Because the cards use a see-through white panel over the dog photo, their text gets harder to read wherever the picture is light. | WebAIM Contrast Checker; WAVE flagged 6 very low contrast items; Lighthouse failed its contrast audit | Perceivable | 1.4.3 Contrast (Minimum) | High | Darken the text and link colors until each pair reaches 4.5:1, and make the card backgrounds nearly solid. |
 | 2 | Neither image describes itself usefully. A screen reader announces the logo as "image" (`alt="image"`, line 15) and reads "paw print" three times for a graphic that is only decoration (line 29). | WAVE (suspicious alternative text); the source code | Perceivable | 1.1.1 Non-text Content | Medium | Name the business in the logo's `alt`, and give the paws an empty `alt` so assistive technology skips them. |
 | 3 | Only a colored dot tells visitors whether the business is open. Friday shows a green dot with no times, and Saturday a red dot with no word such as "Closed" (lines 54 and 55). Anyone who cannot tell red from green learns nothing from either. | Looking at the Hours card; the source code | Perceivable | 1.4.1 Use of Color | High | State each day's status in words, and keep the dots as decoration only. |
