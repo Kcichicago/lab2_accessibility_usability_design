@@ -52,6 +52,13 @@ Contrast pairs checked:
 
 For each ARIA attribute you kept or added, explain why a native HTML element could not do the job. If you use none, say so.
 
+The final home.html uses no ARIA. The starter page had five ARIA attributes, but they were removed because a native element does each job better:
+
+- `role="main"` on a `div` became a `<main>` element.
+- `role="button"` and `aria-label="click here"` on the "Request a Stay" `div` became a real link, whose visible text is its name.
+- `aria-label="more"` on the "Click here" link went away once the link text described its destination.
+- `aria-hidden="true"` on the hours list was removed, since it hid the hours from screen reader users. The hours now sit in a table.
+
 ## Usability review of services.html
 
 Task scenarios:
@@ -98,12 +105,12 @@ Design checklist for this page:
 
 | Check | Before | After |
 |---|---|---|
-| Lighthouse accessibility score | | |
-| WAVE errors | | |
-| WAVE contrast errors | | |
-| HTML validator errors | | |
-| Keyboard test | | |
-| 200% zoom and 320px test | | |
+| Lighthouse accessibility score | 84 | [your score] |
+| WAVE errors | 1 | [your count] |
+| WAVE contrast errors | 6 | [your count] |
+| HTML validator errors | 5 | [your count] |
+| Keyboard test | Four stops in reverse order, no visible focus, "Request a Stay" unreachable, no skip link | [what you saw] |
+| 200% zoom and 320px test | Sideways scrolling and clipped content at 200%; a shrunken desktop layout at 320px | [what you saw] |
 
 ## Before shipping checklist (all three pages)
 
