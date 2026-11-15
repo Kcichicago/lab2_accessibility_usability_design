@@ -1,135 +1,262 @@
-/* MPLS Dog Boarding: styles for home.html */
+/* MPLS Dog Boarding: shared styles */
+
+/* Design tokens: every color, size and space is defined once here. */
+:root {
+  --color-text: #1f1f1f;
+  --color-muted: #454545;
+  --color-heading: #5b2a86;
+  --color-link: #0b4aa2;
+  --color-focus: #0b3d91;
+  --color-page: #ffffff;
+  --color-card: rgba(255, 255, 255, 0.94);
+  --color-footer: #f4f4f4;
+  --color-accent: #f5a25d;
+  --color-accent-edge: #7a3d00;
+  --color-rule: #6b6b6b;
+  --color-open: #1e7a3a;
+  --color-closed: #b3261e;
+
+  --font-body: 'Montserrat', Arial, sans-serif;
+  --size-base: 1rem;
+  --size-small: 0.9375rem;
+  --size-h1: 2rem;
+  --size-h2: 1.375rem;
+  --size-h3: 1.0625rem;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
-  font-size: 12px;
-  color: #8a8a8a;
+  font-family: var(--font-body);
+  font-size: var(--size-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-page);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-  color: #8ab4ff;
+  color: var(--color-link);
 }
 
-a:focus,
-.btn:focus,
-*:focus {
-  outline: none;
+/* Text links in cards and the footer get a taller click and tap area */
+.card p a,
+.site-footer a {
+  display: inline-block;
+  padding: 0.25rem 0;
 }
 
-/* Page grid: header row, main row, footer row */
-#container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 150px 1fr 15%;
-  width: 100vw;
-  min-width: 1000px;
-  height: 100vh;
-  overflow: hidden;
+/* A clear focus indicator on everything that can take focus */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
-.top {
-  grid-column: 1 / 4;
-  grid-row: 1;
+/* Skip link: hidden above the page until it receives focus */
+.skip-link {
+  position: absolute;
+  top: var(--space-1);
+  left: var(--space-1);
+  z-index: 10;
+  padding: var(--space-1) var(--space-2);
+  font-weight: 600;
+  background: var(--color-page);
+  border: 2px solid var(--color-focus);
+  border-radius: 6px;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Header */
+.site-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
-  background: #ffffff;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-page);
 }
 
-.top img {
+.brand {
+  display: block;
   width: 150px;
 }
 
-.menu a {
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-/* Main area with flexbox cards over a photo */
-#flexcontainer {
-  grid-column: 1 / 4;
-  grid-row: 2;
+.menu {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: inline-block;
+  padding: var(--space-1) 0;
+  font-weight: 600;
+}
+
+/* Main area: cards over the dog photo */
+main {
+  flex: 1;
+  padding: var(--space-3) var(--space-2);
   background: url('img/dog_bg.jpeg') center / cover no-repeat;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-3);
+  max-width: 70rem;
+  margin: var(--space-3) auto 0;
+}
+
 .card {
-  flex: 1 0 325px;
-  height: 350px;
-  overflow: hidden;
-  box-sizing: border-box;
-  padding: 10px;
-  margin: 2%;
-  background-color: rgba(255, 255, 255, 0.55);
-  border-radius: 10px;
+  padding: var(--space-3);
+  background-color: var(--color-card);
+  border-radius: var(--radius);
+  scroll-margin-top: var(--space-2);
+}
+
+/* Show which card a same-page link (such as "Hours") jumped to,
+   including in a tall window where the page has no need to scroll */
+.card:target {
+  box-shadow: 0 0 0 3px var(--color-page), 0 0 0 6px var(--color-focus);
 }
 
 .hero {
-  flex: 1 1 90%;
-  height: 170px;
+  max-width: 70rem;
+  margin: 0 auto;
 }
 
-.card h2,
-.card h3 {
-  color: #b388d6;
-  font-size: 14px;
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--space-1);
+  line-height: 1.25;
+  color: var(--color-heading);
 }
 
-.card h5 {
-  color: #b8b8b8;
-  font-size: 11px;
+h1 {
+  font-size: var(--size-h1);
 }
 
-.title {
-  font-size: 22px;
-  color: #c9a3e8;
+h2 {
+  font-size: var(--size-h2);
+}
+
+h3 {
+  margin-top: var(--space-2);
+  font-size: var(--size-h3);
+  color: var(--color-text);
+}
+
+p {
+  margin: 0 0 var(--space-2);
+}
+
+.card > :last-child {
+  margin-bottom: 0;
 }
 
 .tagline {
-  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-muted);
 }
 
+/* Primary action */
 .btn {
   display: inline-block;
-  padding: 10px 18px;
-  background: #f5a25d;
-  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent-edge);
   border-radius: 6px;
-  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: underline;
 }
 
 .paws {
   display: block;
   width: 120px;
-  margin-top: 10px;
+  margin-top: var(--space-2);
 }
 
+/* Hours table */
+.hours {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours th,
+.hours td {
+  padding: 0.375rem var(--space-1) 0.375rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.hours tbody th {
+  font-weight: 600;
+}
+
+/* The dots repeat what the text already says; they carry no meaning alone. */
 .dot {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 6px;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-right: var(--space-1);
   border-radius: 50%;
 }
 
-.green {
-  background: #2e9e4f;
+.open {
+  background: var(--color-open);
 }
 
-.red {
-  background: #d64545;
+.closed {
+  background: var(--color-closed);
 }
 
-.foot {
-  grid-column: 1 / 4;
-  grid-row: 3;
-  padding-top: 40px;
-  font-size: 11px;
-  color: #aaaaaa;
-  background: #f4f4f4;
+/* Footer */
+.site-footer {
+  padding: var(--space-3) var(--space-2);
+  font-size: var(--size-small);
+  text-align: center;
+  color: var(--color-text);
+  background: var(--color-footer);
+}
+
+.site-footer address {
+  margin-bottom: var(--space-1);
+  font-style: normal;
+}
+
+.site-footer p {
+  margin: 0;
 }
