@@ -105,12 +105,12 @@ Design checklist for this page:
 
 | Check | Before | After |
 |---|---|---|
-| Lighthouse accessibility score | 84 | [your score] |
-| WAVE errors | 1 | [your count] |
-| WAVE contrast errors | 6 | [your count] |
-| HTML validator errors | 5 | [your count] |
-| Keyboard test | Four stops in reverse order, no visible focus, "Request a Stay" unreachable, no skip link | [what you saw] |
-| 200% zoom and 320px test | Sideways scrolling and clipped content at 200%; a shrunken desktop layout at 320px | [what you saw] |
+| Lighthouse accessibility score | 84 | 100 |
+| WAVE errors | 1 | 0 |
+| WAVE contrast errors | 6 | 0 |
+| HTML validator errors | 5 | 0 |
+| Keyboard test | Four stops in reverse order, no visible focus, "Request a Stay" unreachable, no skip link | Seven stops in page order, starting with a skip link; a blue outline on every stop; "Request a Stay" reachable and opened with Enter |
+| 200% zoom and 320px test | Sideways scrolling and clipped content at 200%; a shrunken desktop layout at 320px | No sideways scrolling and nothing cut off at 200%; at 320px the cards stack in one column with readable text |
 
 ## Before shipping checklist (all three pages)
 
@@ -122,3 +122,4 @@ Design checklist for this page:
 
 ## One thing I had to check by hand that the tools did not catch
 
+Manual checks determined that clicking “Hours” in a full-height window elicited no visible response, because the card was already on screen. An outline had to be mapped onto the card display in order for a click to evince results consistently. Lighthouse also had to be validated manually.
