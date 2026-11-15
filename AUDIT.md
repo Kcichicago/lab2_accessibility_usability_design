@@ -4,7 +4,7 @@ Name: Kcichicago
 
 ## Baseline (home.html before any changes)
 
-Test setup: Google Chrome 158, MacBook Pro (Intel), maximized window at 100% zoom, tested at http://localhost:8000/home.html on November 13, 2026. Lighthouse run from Chrome DevTools in Navigation mode, Desktop device, Accessibility category only. WAVE run as the Chrome extension. HTML checked by file upload at validator.w3.org/nu.
+Test setup: Google Chrome 158, MacBook Pro (Intel), maximized window at 100% zoom, tested at http://localhost:8000/home.html on November 15, 2026. Lighthouse run from Chrome DevTools in Navigation mode, Desktop device, Accessibility category only. WAVE run as the Chrome extension. HTML checked by file upload at validator.w3.org/nu.
 
 Note: The starter img folder does not possess the logo or background photo.  mpls_dog_logo.png and dog_bg.jpeg were added from the professor's Fall 2025 template prior to testing.
 
@@ -32,6 +32,10 @@ Contrast pairs checked:
 | `#aaaaaa` (footer text) | `#f4f4f4` (footer) | 2.11:1 | Fail: normal-size text needs 4.5:1 |
 
 ## Problems found on home.html (at least 8)
+
+| # | What I saw (evidence) | Tool or test that showed it | POUR principle | WCAG idea | Severity | Planned fix |
+|---|---|---|---|---|---|---|
+
 
 | 1 | Pale text fails contrast across the page. I measured the header links (`#8ab4ff` on white) at 2.08:1, the white label on the orange "Request a Stay" button at 2.05:1, and the gray footer text (`#aaaaaa` on `#f4f4f4`) at 2.11:1. Because the cards use a see-through white panel over the dog photo, their text gets harder to read wherever the picture is light. | WebAIM Contrast Checker; WAVE flagged 6 very low contrast items; Lighthouse failed its contrast audit | Perceivable | 1.4.3 Contrast (Minimum) | High | Darken the text and link colors until each pair reaches 4.5:1, and make the card backgrounds nearly solid. |
 | 2 | Neither image describes itself usefully. A screen reader announces the logo as "image" (`alt="image"`, line 15) and reads "paw print" three times for a graphic that is only decoration (line 29). | WAVE (suspicious alternative text); the source code | Perceivable | 1.1.1 Non-text Content | Medium | Name the business in the logo's `alt`, and give the paws an empty `alt` so assistive technology skips them. |
