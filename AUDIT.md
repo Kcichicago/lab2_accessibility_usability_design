@@ -79,12 +79,17 @@ Findings (at least 6, at least 5 different heuristics):
 
 | # | Task | Evidence (what happened) | Heuristic | Severity | Change to test |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
+| 1 | A and B. Success means choosing a large dog and two dates without guessing. | The Size menu offered S1, M2, L3 and XL4, so I guessed that L3 meant large, and "See chart" opened nothing. The date fields read "Date 1" and "Date 2," and the estimate sat under the heading "Kennel nights." | Match between system and the real world | Medium | Rename the sizes Small, Medium, Large and Extra large, and label the dates "Drop off date" and "Pick up date." |
+| 2 | A. Success means knowing the price of each service and how the total was reached. | No price appeared on any service button until after I clicked it. The list then showed $75 and $60, while "Est." read $148.50, and nothing on the page accounted for the extra $13.50. | Recognition rather than recall | Medium | Show each price beside its service, and list the size charge as its own line above the total. |
+| 3 | A. Success means each service counted once. | A second click on Grooming added it to the list again and raised the estimate to $214.50. The page accepted the duplicate without comment. | Error prevention | Medium | Replace the buttons with checkboxes, so a service is either on or off. |
+| 4 | B. Success means learning what to correct when a date is missing or wrong. | With both dates empty, a pop-up read "Error 4012." With the dates reversed, it read "Error 4013: invalid range." Neither named the field or said what to do. | Help users recognize, diagnose, and recover from errors | High | Put a plain sentence under the field at fault, such as "Choose a drop off date." |
+| 5 | B. Success means an answer about December 24 to 26. | After I entered both dates and pressed Go, a spinner turned for about two seconds and vanished. No message followed, so I never learned whether the stay was possible. Send did nothing at all. | Visibility of system status | High | Replace the spinner with a sentence that states the result. |
+| 6 | C. Success means removing Training and keeping the rest. | No control removed a single service. Reset, the only option, emptied the entire estimate the moment I clicked it and asked nothing first. | User control and freedom | High | Add a remove control to each chosen service, and ask for confirmation before clearing everything. |
+| 7 | All three. Success means seeing at once where to begin. | Three banners in capital letters filled the top of the page, and "CLICK HERE" led nowhere. Below them, Reset, Go and Send looked identical, so no single action stood out. | Aesthetic and minimalist design | Medium | Remove the banners and give one button the primary style. |
+
+- Who is using this? Dog owners planning a stay, who want a rough price and want to know whether their dates work before they commit.
+- What is the primary action? Requesting a stay, once the estimate looks right.
+- What competes with it? On the original page, three promotional banners, a "CLICK HERE" link that led nowhere, and three look-alike buttons (Reset, Go and Send) all pulled attention away from it.
 
 Design checklist for this page:
 
@@ -94,6 +99,8 @@ Design checklist for this page:
 
 ## Retest of services.html
 
+| Task | Before (result) | After (result) |
+|---|---|---|
 | A | The estimate read $148.50, yet the list showed $75 and $60, which add up to $135, and nothing explained the gap. Finding "large" meant guessing among S1, M2, L3 and XL4, and "See chart" opened nothing. A second click on Grooming added it twice. | Ticking Boarding and Grooming and choosing "Large (adds 10%)" produced a breakdown: services $135.00, size $13.50, estimated total $148.50. A status line confirmed each choice, and a service can no longer be added twice. I completed the task by mouse and again by keyboard. |
 | B | "Date 1" and "Date 2" gave no hint of which came first. With both empty, a pop-up read "Error 4012." After I entered December 24 and 26, a spinner turned for about two seconds and then nothing appeared, so the question went unanswered. | The fields now read "Drop off date" and "Pick up date." Checking with no dates put "Error: Choose a drop off date." under the field and moved focus there. With December 24 and 26 entered, a message reported a stay of 2 nights, confirmed the business is open on both days, and said to request a stay to confirm a spot. |
 | C | No control removed a single service. Reset was the only option, and it emptied the whole estimate at once without asking. | "Remove Training" took Training off the estimate and left Boarding and Grooming in place, with the total updated. Unticking the Training box does the same. "Clear my estimate" now asks first and offers "No, keep my estimate." |
