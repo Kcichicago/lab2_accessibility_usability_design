@@ -59,6 +59,14 @@ The final home.html uses no ARIA. The starter page had five ARIA attributes, but
 - `aria-label="more"` on the "Click here" link went away once the link text described its destination.
 - `aria-hidden="true"` on the hours list was removed, since it hid the hours from screen reader users. The hours now sit in a table.
 
+**services.html (Part 3):** this page uses ARIA in three places, each for a job native HTML cannot do reliably.
+
+- `role="status"` marks two message areas, one under the dates and one in the estimate. Both sit on the page, empty, from the start. When the script writes a message into one, a screen reader announces it without moving focus. The native `<output>` element comes closest, but it is meant for calculation results and screen readers announce it less consistently.
+- `aria-describedby` links each date field to the error paragraph beneath it, so a screen reader reads the error along with the field's label. A `<label>` can name a field, but it cannot attach a second message that changes.
+- `aria-invalid="true"` goes on a date field only while it has an error, and the script removes it once the error clears. HTML's built-in validity applies only to the browser's own validation, which this page replaces with its own wording.
+
+Everything else is native HTML: checkboxes inside a `fieldset` with a `legend`, a `select`, `date` inputs, and real buttons and links.
+
 ## Usability review of services.html
 
 Task scenarios:
@@ -86,11 +94,9 @@ Design checklist for this page:
 
 ## Retest of services.html
 
-| Task | Before (result) | After (result) |
-|---|---|---|
-| A | | |
-| B | | |
-| C | | |
+| A | The estimate read $148.50, yet the list showed $75 and $60, which add up to $135, and nothing explained the gap. Finding "large" meant guessing among S1, M2, L3 and XL4, and "See chart" opened nothing. A second click on Grooming added it twice. | Ticking Boarding and Grooming and choosing "Large (adds 10%)" produced a breakdown: services $135.00, size $13.50, estimated total $148.50. A status line confirmed each choice, and a service can no longer be added twice. I completed the task by mouse and again by keyboard. |
+| B | "Date 1" and "Date 2" gave no hint of which came first. With both empty, a pop-up read "Error 4012." After I entered December 24 and 26, a spinner turned for about two seconds and then nothing appeared, so the question went unanswered. | The fields now read "Drop off date" and "Pick up date." Checking with no dates put "Error: Choose a drop off date." under the field and moved focus there. With December 24 and 26 entered, a message reported a stay of 2 nights, confirmed the business is open on both days, and said to request a stay to confirm a spot. |
+| C | No control removed a single service. Reset was the only option, and it emptied the whole estimate at once without asking. | "Remove Training" took Training off the estimate and left Boarding and Grooming in place, with the total updated. Unticking the Training box does the same. "Clear my estimate" now asks first and offers "No, keep my estimate." |
 
 ## Verification of book.html
 
