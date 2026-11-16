@@ -14,18 +14,18 @@ The files were listed correctly but .DS_Store was described as part of the proje
 
 | # | Where I used it (file or part) | My prompt | What the AI returned (short summary) | What I did (kept, changed, rejected) and why |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
+| 1 | Part 4, project check (Copilot) | "List the files in this project and tell me in one sentence what each file does." | A correct list of the site files. | Kept the list. It also described `.DS_Store`, a macOS system file, as part of the project, which I disregarded. |
+| 2 | Part 4, `book.html` and `booking.js`, first run (Copilot) | A Goal, Context, Constraints, Acceptance criteria and Output prompt. Full text is in `docs/part4-first-prompt.md`. | Two new files of 197 lines in total, with a closing list of the checks it had not run. | Lost. The edits were discarded before I committed, so the 9:34 pm commit holds two empty files. |
+| 3 | Part 4, `book.html` and `booking.js`, second run (Copilot) | The same prompt, sent again. | A booking page (89 lines) and script (107 lines) that passed the validator, Lighthouse and WAVE. | Kept as the draft and committed it untouched. My prompt held the wrong text under Acceptance criteria, and Copilot did not question it. |
+| 4 | Part 4, `booking.js` (Copilot) | "The success message stays on screen after a field is edited. Clear the status message as soon as any field is edited. Change booking.js only." | One added line that clears the message on input. | Kept. It worked on the first try. |
+| 5 | Part 4, `booking.js` (Copilot) | "The form accepts the email a@b. An address with no dot after the @ should be rejected with that same message." | One extra condition on the email check. | Kept. `a@b` is now rejected and normal addresses still pass. |
+| 6 | Part 4, `booking.js` (Copilot) | "After a valid submit the fields stay filled and pressing the button again sends the same request a second time. Clear the five fields." | A form reset after the success message. | Kept. I reran all three tests afterward to confirm nothing earlier had broken. |
 
 ## Problems I found in the AI booking form (at least 3)
 
 | # | Problem | How I found it (tool, test, or reading the diff) | Fixed by hand or by follow up prompt |
 |---|---|---|---|
-| 1 | The success message stayed on screen after I edited a field, so "Request received" sat beside details that were never sent. | Manual test in Chrome. A second AI review (Claude) pointed me to it, and I reproduced it before fixing. | Follow up prompt to Copilot. It worked on the first try. |
+| 1 | The success message stayed on screen after I edited a field, so "Request received" sat beside details that were never sent. | Manual test in Chrome. An additional LLM review pointed it out, and I was able to replicate it before fixing. | Follow up prompt to Copilot. It worked on the first try.|
 | 2 | The form accepted `a@b` as an email, although its own error text asks for an address like name@example.com. | Manual test in Chrome, after the same review flagged line 74 of `booking.js`. | Follow up prompt to Copilot. It worked on the first try. |
 | 3 | After a valid submit the fields stayed filled, and a second press of the button sent the same request again with no change on screen. | Manual test in Chrome, prompted by the same review. | Follow up prompt to Copilot. It worked on the first try. |
 

@@ -22,5 +22,5 @@ Unverified: I did not perform a formal WCAG/Section 508 audit, screen-reader tes
 
 ## Follow-up prompts
 
-In #file:booking.js the success message stays on screen after a field is edited. Steps: submit a valid form, then change the email. "Request received" is still shown. Clear the status message as soon as any field is edited. Change booking.js only and nothing else in it. Tell me which lines you changed.
+In #file:booking.js the success message stays on screen after a field is edited. Steps: submit a valid form, then change the email. "Request received" is still shown. Clear the status message as soon as any field is edited. Change booking.js only and nothing else in it. 
 
