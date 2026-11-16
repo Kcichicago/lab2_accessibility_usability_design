@@ -130,11 +130,11 @@ Design checklist for this page:
 
 ## Before shipping checklist (all three pages)
 
-- [ ] Keyboard access works everywhere. Proof:
-- [ ] Focus is always visible. Proof:
-- [ ] Contrast passes. Proof:
-- [ ] Layout works on small screens. Proof:
-- [ ] Feedback is meaningful (errors and success). Proof:
+- [x] Keyboard access works everywhere. Proof: Using only Tab, Shift+Tab, Enter and Space, I reached every link, field and button on all three pages, completed Tasks A, B and C on the services page, and sent a booking request.
+- [x] Focus is always visible. Proof: A 3px dark blue outline appeared at every stop on all three pages, beginning with the skip link, and no rule in `styles.css` or `services.css` removes it.
+- [x] Contrast passes. Proof: WAVE reported 0 contrast errors on each page, and the WebAIM checker gave 9.9:1 for heading text and 8.01:1 for the button label, both above 4.5:1.
+- [x] Layout works on small screens. Proof: At 320px, 768px and 1280px in Chrome's device mode, and at 200% zoom, no page needed sideways scrolling and no text was cut off.
+- [x] Feedback is meaningful (errors and success). Proof: On the services and booking pages each error appears beside its field, begins with "Error:" and says what to fix, while confirmations appear in `role="status"` areas without moving focus.
 
 ## One thing I had to check by hand that the tools did not catch
 
