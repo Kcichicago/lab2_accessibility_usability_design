@@ -142,7 +142,7 @@ main {
 /* Show which card a same-page link (such as "Hours") jumped to,
    including in a tall window where the page has no need to scroll */
 .card:target {
-  box-shadow: 0 0 0 3px var(--color-page), 0 0 0 6px var(--color-focus);
+  box-shadow: 0 0 0 4px var(--color-focus), 0 0 0 8px var(--color-page);
 }
 
 .hero {
