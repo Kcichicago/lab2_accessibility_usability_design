@@ -87,15 +87,12 @@ Findings (at least 6, at least 5 different heuristics):
 | 6 | C. Success means removing Training and keeping the rest. | No control removed a single service. Reset, the only option, emptied the entire estimate the moment I clicked it and asked nothing first. | User control and freedom | High | Add a remove control to each chosen service, and ask for confirmation before clearing everything. |
 | 7 | All three. Success means seeing at once where to begin. | Three banners in capital letters filled the top of the page, and "CLICK HERE" led nowhere. Below them, Reset, Go and Send looked identical, so no single action stood out. | Aesthetic and minimalist design | Medium | Remove the banners and give one button the primary style. |
 
+Design checklist for this page:
+
 - Who is using this? Dog owners planning a stay, who want a rough price and want to know whether their dates work before they commit.
 - What is the primary action? Requesting a stay, once the estimate looks right.
 - What competes with it? On the original page, three promotional banners, a "CLICK HERE" link that led nowhere, and three look-alike buttons (Reset, Go and Send) all pulled attention away from it.
 
-Design checklist for this page:
-
-- Who is using this?
-- What is the primary action?
-- What competes with it?
 
 ## Retest of services.html
 
