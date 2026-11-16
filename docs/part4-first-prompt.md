@@ -20,3 +20,7 @@ Checks: Editor reports no errors; node --check and git diff --check pass. Browse
 
 Unverified: I did not perform a formal WCAG/Section 508 audit, screen-reader test, human usability study, or independent browser test at 200% zoom. No checklist item appears unimplemented, but those checks remain unverified. The backend request is intentionally simulated, as requested.
 
+## Follow-up prompts
+
+In #file:booking.js the success message stays on screen after a field is edited. Steps: submit a valid form, then change the email. "Request received" is still shown. Clear the status message as soon as any field is edited. Change booking.js only and nothing else in it. Tell me which lines you changed.
+

@@ -71,7 +71,7 @@ form.addEventListener('submit', function (event) {
   recordProblem(ownerName, ownerName.value.trim() ? '' : 'Enter your name.');
   if (!email.value.trim()) {
     recordProblem(email, 'Enter your email address.');
-  } else if (email.validity.typeMismatch) {
+  } else if (email.validity.typeMismatch || email.value.lastIndexOf('.') <= email.value.indexOf('@')) {
     recordProblem(email, 'Enter an email like name@example.com.');
   }
   recordProblem(dogName, dogName.value.trim() ? '' : "Enter your dog's name.");
@@ -93,10 +93,13 @@ form.addEventListener('submit', function (event) {
 
   // Replace this simulated response with the real Node.js request later.
   status.textContent = 'Request received. We will reply within one business day. Your stay is not confirmed until we contact you.';
+  form.reset();
+  updateDateMinimums();
 });
 
 fields.forEach(function (field) {
   field.addEventListener('input', function () {
+    status.textContent = '';
     setError(field, '');
     if (field === dropoff || field === pickup) {
       updateDateMinimums();

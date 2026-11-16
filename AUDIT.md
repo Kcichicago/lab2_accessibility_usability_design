@@ -67,6 +67,12 @@ The final home.html uses no ARIA. The starter page had five ARIA attributes, but
 
 Everything else is native HTML: checkboxes inside a `fieldset` with a `legend`, a `select`, `date` inputs, and real buttons and links.
 
+**book.html (Part 4):** Copilot's draft uses ARIA in the same three ways as the services page, and I kept all three.
+
+- `role="status"` marks the paragraph under the button. It is empty when the page loads, and the script writes the confirmation into it, so a screen reader announces the message while focus stays on the button.
+- `aria-describedby` ties each of the five fields to its own error paragraph, which a `<label>` alone cannot do.
+- `aria-invalid="true"` appears on a field only while it has an error. The page turns off the browser's own validation with `novalidate`, so the script has to report that state itself.
+
 ## Usability review of services.html
 
 Task scenarios:
@@ -106,10 +112,10 @@ Design checklist for this page:
 
 | Check | Result |
 |---|---|
-| HTML validator errors | |
-| Lighthouse accessibility score | |
-| Keyboard test (notes) | |
-| DevTools check of the status message container (what attribute did you see?) | |
+| HTML validator errors | 0 errors and 0 warnings (Nu validator, file upload, after the fixes) |
+| Lighthouse accessibility score | 100 (Chrome 158, Desktop, Accessibility only) |
+| Keyboard test (notes) | Tab reaches the skip link, the three menu links, the five fields and the button, in that order. Each date field takes several presses, one per date part. Focus stays visible throughout. Pressing Enter on an empty form puts focus in Owner name. After a valid submit, focus stays on the button. |
+| DevTools check of the status message container (what attribute did you see?) | `role="status"` on the paragraph with the id `booking-status`. It sits under the button, empty, before any submit. |
 
 ## After (home.html final)
 
