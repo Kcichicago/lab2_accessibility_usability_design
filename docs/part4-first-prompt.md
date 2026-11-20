@@ -24,3 +24,6 @@ Unverified: I did not perform a formal WCAG/Section 508 audit, screen-reader tes
 
 In #file:booking.js the success message stays on screen after a field is edited. Steps: submit a valid form, then change the email. "Request received" is still shown. Clear the status message as soon as any field is edited. Change booking.js only and nothing else in it. 
 
+In #file:booking.js the form accepts the email a@b. The error text asks for an email like name@example.com, so an address with no dot after the @ should be rejected with that same message. Keep type="email" in book.html. Change booking.js only and nothing else in it. 
+
+In #file:booking.js, after a valid submit, the fields stay filled and pressing the button again sends the same request a second time. After the success message appears, clear the five fields. Keep the success message visible and do not move focus. Change booking.js only and nothing else in it. Review which lines were changed.

@@ -4,11 +4,12 @@ Name: Kcichicago
 
 ## My AI setup
 
-- Tool and where it runs: GitHub Copilot Chat in VS Code (editor) 
+- Tool and where it runs (editor, terminal): GitHub Copilot Chat in VS Code (editor) 
 - Version or model, if shown: Copilot Fusion (gpt-6-luna)
 - Project context file name and location: `.github/copilot-instructions.md`
 - Did the tool correctly list and describe my project files on the first try? What did I fix? 
-The files were listed correctly but .DS_Store was described as part of the project.
+While the files were listed correctly, `.DS_Store` was characterized as part of the project. Nothing in the files required extensive repair. By disregarding that description, `.gitignore` leaves 
+`.DS_Store` out of the repository.
 
 ## Prompt log (at least 6)
 
