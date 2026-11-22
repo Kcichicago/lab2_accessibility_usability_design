@@ -21,6 +21,7 @@ While the files were listed correctly, `.DS_Store` was characterized as part of 
 | 4 | Part 4, `booking.js` (Copilot) | "The success message stays on screen after a field is edited. Clear the status message as soon as any field is edited. Change booking.js only." | One added line that clears the message on input. | Kept. It worked on the first try. |
 | 5 | Part 4, `booking.js` (Copilot) | "The form accepts the email a@b. An address with no dot after the @ should be rejected with that same message." | One extra condition on the email check. | Kept. `a@b` is now rejected and normal addresses still pass. |
 | 6 | Part 4, `booking.js` (Copilot) | "After a valid submit the fields stay filled and pressing the button again sends the same request a second time. Clear the five fields." | A form reset after the success message. | Kept. I reran all three tests afterward to confirm nothing earlier had broken. |
+| 7 | Part 4, `booking.js` (Copilot) | "The success message does not say what was requested, and the form erases immediately afterward. Before the form resets, read the dog's name and both dates, and include them in the message." | A helper that writes dates in words, and a message that repeats the dog's name and both dates. | Kept. User confirmed that the values are retained before the form clears, and that a name typed with HTML tags then appears as plain text. |
 
 ## Problems I found in the AI booking form (at least 3)
 

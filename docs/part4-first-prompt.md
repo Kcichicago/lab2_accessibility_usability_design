@@ -27,3 +27,6 @@ In #file:booking.js the success message stays on screen after a field is edited.
 In #file:booking.js the form accepts the email a@b. The error text asks for an email like name@example.com, so an address with no dot after the @ should be rejected with that same message. Keep type="email" in book.html. Change booking.js only and nothing else in it. 
 
 In #file:booking.js, after a valid submit, the fields stay filled and pressing the button again sends the same request a second time. After the success message appears, clear the five fields. Keep the success message visible and do not move focus. Change booking.js only and nothing else in it. Review which lines were changed.
+
+In #file:booking.js, the success message does not say what was requested, and the form clears right after. Before the form resets, read the dog's name and both dates, and include them in the message, for example: "Request received for Rex, Tuesday, November 24 to Friday, November 27." Keep the rest of the message as it is. Write the dates in words, with the weekday, month and day. Insert the dog's name as text, not HTML. Change booking.js only. Tell me which lines you changed.
+

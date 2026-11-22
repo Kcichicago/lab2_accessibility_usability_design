@@ -17,6 +17,16 @@ function todayValue() {
   return year + '-' + month + '-' + day;
 }
 
+function formatDate(value) {
+  const parts = value.split('-');
+  const date = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
 function updateDateMinimums() {
   const today = todayValue();
   dropoff.min = today;
@@ -92,7 +102,10 @@ form.addEventListener('submit', function (event) {
   }
 
   // Replace this simulated response with the real Node.js request later.
-  status.textContent = 'Request received. We will reply within one business day. Your stay is not confirmed until we contact you.';
+  const requestedDogName = dogName.value.trim();
+  const requestedDropoff = formatDate(dropoff.value);
+  const requestedPickup = formatDate(pickup.value);
+  status.textContent = 'Request received for ' + requestedDogName + ', ' + requestedDropoff + ' to ' + requestedPickup + '. We will reply within one business day. Your stay is not confirmed until we contact you.';
   form.reset();
   updateDateMinimums();
 });
