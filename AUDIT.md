@@ -99,7 +99,6 @@ Design checklist for this page:
 - What is the primary action? Requesting a stay, once the estimate looks right.
 - What competes with it? On the original page, three promotional banners, a "CLICK HERE" link that led nowhere, and three look-alike buttons (Reset, Go and Send) all pulled attention away from it.
 
-
 ## Retest of services.html
 
 | Task | Before (result) | After (result) |

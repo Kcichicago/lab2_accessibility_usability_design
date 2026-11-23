@@ -4,11 +4,11 @@ Name: Kcichicago
 
 ## My AI setup
 
-- Tool and where it runs (editor, terminal): GitHub Copilot Chat in VS Code (editor) 
+- Tool and where it runs (editor, terminal): GitHub Copilot Chat in VS Code (editor)
 - Version or model, if shown: Copilot Fusion (gpt-6-luna)
 - Project context file name and location: `.github/copilot-instructions.md`
-- Did the tool correctly list and describe my project files on the first try? What did I fix? 
-While the files were listed correctly, `.DS_Store` was characterized as part of the project. Nothing in the files required extensive repair. By disregarding that description, `.gitignore` leaves 
+- Did the tool correctly list and describe my project files on the first try? What did I fix?
+While the files were listed correctly, `.DS_Store` was characterized as part of the project. Nothing in the files required extensive repair. By disregarding that description, `.gitignore` leaves
 `.DS_Store` out of the repository.
 
 ## Prompt log (at least 6)
@@ -27,7 +27,7 @@ While the files were listed correctly, `.DS_Store` was characterized as part of 
 
 | # | Problem | How I found it (tool, test, or reading the diff) | Fixed by hand or by follow up prompt |
 |---|---|---|---|
-| 1 | The success message stayed on screen after I edited a field, so "Request received" sat beside details that were never sent. | Manual test in Chrome. An additional LLM review pointed it out, and I was able to replicate it before fixing. | Follow up prompt to Copilot. It worked on the first try.|
+| 1 | The success message stayed on screen after I edited a field, so "Request received" sat beside details that were never sent. | Manual test in Chrome. An additional LLM review pointed it out, and I was able to replicate it before fixing. | Follow up prompt to Copilot. It worked on the first try. |
 | 2 | The form accepted `a@b` as an email, although its own error text asks for an address like name@example.com. | Manual test in Chrome, after the same review flagged line 74 of `booking.js`. | Follow up prompt to Copilot. It worked on the first try. |
 | 3 | After a valid submit the fields stayed filled, and a second press of the button sent the same request again with no change on screen. | Manual test in Chrome, prompted by the same review. | Follow up prompt to Copilot. It worked on the first try. |
 
