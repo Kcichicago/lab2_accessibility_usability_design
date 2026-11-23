@@ -6,7 +6,7 @@ Name: Kcichicago
 
 Test setup: Google Chrome 158, MacBook Pro (Intel), maximized window at 100% zoom, tested at http://localhost:8000/home.html on November 15, 2026. Lighthouse run from Chrome DevTools in Navigation mode, Desktop device, Accessibility category only. WAVE run as the Chrome extension. HTML checked by file upload at validator.w3.org/nu.
 
-Note: The starter `img` folder did not include the logo or background photo. `mpls_dog_logo.png` and `dog_bg.jpeg` were added from the professor's Fall 2025 template, provided prior to testing.
+Note: The starter `img` folder did not include the logo or background photo. `mpls_dog_logo.png` and `dog_bg.jpeg` were added from the professor's Fall 2025 template provided prior to testing.
 
 WAVE AIM Score at baseline: 5.9 out of 10.
 
