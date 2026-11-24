@@ -20,12 +20,13 @@ function todayValue() {
 function formatDate(value) {
   const parts = value.split('-');
   const date = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
-return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString('en-US', {
     weekday: 'long',
     month: 'long',
     day: 'numeric',
     year: 'numeric'
   });
+}
 
 function updateDateMinimums() {
   const today = todayValue();
