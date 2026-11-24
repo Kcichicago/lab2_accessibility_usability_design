@@ -31,3 +31,12 @@ In #file:booking.js, after a valid submit, the fields stay filled and pressing t
 
 In #file:booking.js, the success message does not say what was requested, and the form clears right after. Before the form resets, read the dog's name and both dates, and include them in the message, for example: "Request received for Rex, Tuesday, November 24 to Friday, November 27." Keep the rest of the message as it is. Write the dates in words, with the weekday, month and day. Insert the dog's name as text, not HTML. Change booking.js only. Tell me which lines you changed.
 
+Goal: carry the dates a visitor checked on the services page into the booking form.
+
+Context: Read #file:services.js, #file:services.html, #file:booking.js and #file:book.html. On the services page, "Check these dates" validates #dropoff and #pickup and writes a result into #date-status. The "Request a Stay" link is the a.btn inside the section with class "summary".
+
+Constraints: Plain JavaScript. No storage, cookies or libraries. Do not change any HTML or CSS file. In services.js, after a successful date check, set that link's href to book.html?dropoff=YYYY-MM-DD&pickup=YYYY-MM-DD using the two field values. Set it back to book.html when a date check fails, when either date field is edited, and when the estimate is cleared. In booking.js, when the page loads and before the first call to updateDateMinimums(), read dropoff and pickup from the address with URLSearchParams. Use a value only if it matches four digits, a dash, two digits, a dash, two digits. Put it in the matching date field through its value property. Do not show errors on load and do not move focus. Change nothing else.
+
+Acceptance criteria: book.html opened with no dates in the address behaves exactly as it does now. Values that are not dates are ignored. Past dates and Sundays still produce the existing errors when the form is sent. Tasks A, B and C on the services page still work.
+
+Output: Show me each change before applying it. Then list anything you are unsure about.

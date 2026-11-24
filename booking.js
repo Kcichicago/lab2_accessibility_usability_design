@@ -59,6 +59,16 @@ function dateProblem(field, label, today) {
   return '';
 }
 
+const dateParams = new URLSearchParams(window.location.search);
+const requestedDropoff = dateParams.get('dropoff');
+const requestedPickup = dateParams.get('pickup');
+if (requestedDropoff && /^\d{4}-\d{2}-\d{2}$/.test(requestedDropoff)) {
+  dropoff.value = requestedDropoff;
+}
+if (requestedPickup && /^\d{4}-\d{2}-\d{2}$/.test(requestedPickup)) {
+  pickup.value = requestedPickup;
+}
+
 updateDateMinimums();
 
 form.addEventListener('submit', function (event) {

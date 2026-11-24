@@ -14,6 +14,7 @@ const sizeAmount = document.getElementById('size-amount');
 const totalOut = document.getElementById('total');
 const estimateStatus = document.getElementById('estimate-status');
 const dateStatus = document.getElementById('date-status');
+const requestLink = document.querySelector('.summary a.btn');
 
 const clearButton = document.getElementById('clear');
 const clearConfirm = document.getElementById('clear-confirm');
@@ -133,10 +134,13 @@ document.getElementById('check-dates').addEventListener('click', function () {
   setError(pickup, pickupProblem);
 
   if (dropoffProblem || pickupProblem) {
+    requestLink.href = 'book.html';
     dateStatus.textContent = '';
     (dropoffProblem ? dropoff : pickup).focus();
     return;
   }
+
+  requestLink.href = 'book.html?dropoff=' + dropoff.value + '&pickup=' + pickup.value;
 
   const start = toDate(dropoff.value);
   const end = toDate(pickup.value);
@@ -152,6 +156,7 @@ document.getElementById('check-dates').addEventListener('click', function () {
   field.addEventListener('input', function () {
     setError(field, '');
     dateStatus.textContent = '';
+    requestLink.href = 'book.html';
   });
 });
 
@@ -173,6 +178,7 @@ document.getElementById('clear-yes').addEventListener('click', function () {
   setError(dropoff, '');
   setError(pickup, '');
   dateStatus.textContent = '';
+  requestLink.href = 'book.html';
   clearConfirm.hidden = true;
   updateEstimate();
   estimateStatus.textContent = 'Estimate cleared.';

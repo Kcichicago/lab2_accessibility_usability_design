@@ -6,7 +6,7 @@ Name: Kcichicago
 
 Test setup: Google Chrome 158, MacBook Pro (Intel), maximized window at 100% zoom, tested at http://localhost:8000/home.html on November 15, 2026. Lighthouse run from Chrome DevTools in Navigation mode, Desktop device, Accessibility category only. WAVE run as the Chrome extension. HTML checked by file upload at validator.w3.org/nu.
 
-Note: The starter `img` folder did not include the logo or background photo. `mpls_dog_logo.png` and `dog_bg.jpeg` were added from the professor's Fall 2025 template provided prior to testing.
+Note: The starter `img` folder did not include the logo or background photo. `mpls_dog_logo.png` and `dog_bg.jpeg` were added from the professor's Fall 2025 template prior to testing.
 
 WAVE AIM Score at baseline: 5.9 out of 10.
 
@@ -104,7 +104,7 @@ Design checklist for this page:
 | Task | Before (result) | After (result) |
 |---|---|---|
 | A | The estimate read $148.50, yet the list showed $75 and $60, which add up to $135, and nothing explained the gap. Finding "large" meant guessing among S1, M2, L3 and XL4, and "See chart" opened nothing. A second click on Grooming added it twice. | Ticking Boarding and Grooming and choosing "Large (adds 10%)" produced a breakdown: services $135.00, size $13.50, estimated total $148.50. A status line confirmed each choice, and a service can no longer be added twice. I completed the task by mouse and again by keyboard. |
-| B | "Date 1" and "Date 2" gave no hint of which came first. With both empty, a pop-up read "Error 4012." After I entered December 24 and 26, a spinner turned for about two seconds and then nothing appeared, so the question went unanswered. | The fields now read "Drop off date" and "Pick up date." Checking with no dates put "Error: Choose a drop off date." under the field and moved focus there. With December 24 and 26 entered, a message reported a stay of 2 nights, confirmed the business is open on both days, and said to request a stay to confirm a spot. |
+| B | "Date 1" and "Date 2" gave no hint of which came first. With both empty, a pop-up read "Error 4012." After I entered December 24 and 26, a spinner turned for about two seconds and then nothing appeared, so the question went unanswered. | The fields now read "Drop off date" and "Pick up date." Checking with no dates put "Error: Choose a drop off date." under the field and moved focus there. With December 24 and 26 entered, a message reported a stay of 2 nights, confirmed the business is open on both days, and said to request a stay to confirm a spot.  The checked dates now carry over when I choose "Request a Stay."|
 | C | No control removed a single service. Reset was the only option, and it emptied the whole estimate at once without asking. | "Remove Training" took Training off the estimate and left Boarding and Grooming in place, with the total updated. Unticking the Training box does the same. "Clear my estimate" now asks first and offers "No, keep my estimate." |
 
 ## Verification of book.html
